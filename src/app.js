@@ -4,10 +4,16 @@ import "./style.css";
 
 window.onload = function() {
   console.log(randomExcuse());
+  document.getElementById("excuseLoad").innerHTML = randomExcuse();
+  changeLive();
+  setInterval(changeLive, 1000);
   document.getElementById("excuseButton").onclick = function() {
-    document.getElementById("excuse").innerHTML = randomExcuse();
+    document.getElementById("excuseClick").innerHTML = randomExcuse();
   };
 };
+function changeLive() {
+  document.getElementById("excuseLive").innerHTML = randomExcuse();
+}
 let who = ["The dog", "My grandma", "His turtle", "My bird"];
 let action = ["ate", "peed", "crushed", "broke"];
 let what = ["my homework", "the keys", "the car"];
